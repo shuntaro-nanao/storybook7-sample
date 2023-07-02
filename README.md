@@ -69,3 +69,9 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+
+### stroybook 
+
+```sh
+npm run stroybook
+```
