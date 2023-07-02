@@ -74,6 +74,6 @@ npm run lint
 
 ```sh
 npm run stroybook
-# Run testting
+# Run testing
 npm run storybook-test
 ```
