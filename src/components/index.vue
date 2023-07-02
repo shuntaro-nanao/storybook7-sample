@@ -4,7 +4,7 @@ import MyLogin from '../components/MyLogin/index.vue';
 
 <template>
   <div>
-    <MyLogin label="hoge" />
+    <MyLogin label="ログイン" />
   </div>
 </template>
 

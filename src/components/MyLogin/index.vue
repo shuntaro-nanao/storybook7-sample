@@ -8,7 +8,20 @@ const props = defineProps({
 </script>
 
 <template>
-  {{ props.label }}
+  <input
+    data-testid="email"
+    aria-required="true"
+    type="email"
+  />
+  <input
+    data-testid="password"
+    aria-required="true"
+    type="password"
+  />
+  <button
+    data-testid="submit"
+    type="submit"
+  >{{ props.label }}</button>
 </template>
 
 <style scoped>
