@@ -1,22 +1,16 @@
 import MyLogin from "./index.vue";
-import type { Meta, StoryObj } from "@storybook/vue3";
 import { within, userEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
-type Story = StoryObj<typeof MyLogin>;
+const meta = { title: "MyLogin", component: MyLogin };
+export default meta;
 
-const meta: Meta<typeof MyLogin> = {
-  title: "MyLogin",
-  component: MyLogin,
-};
-
-export const Default: Story = {
+export const Default = {
   render: () => ({
     components: { MyLogin },
     template: "<MyLogin label='ログイン' />",
   }),
 };
-
-export default meta;
 
 export const Test = {
   args: {
@@ -27,5 +21,6 @@ export const Test = {
     await userEvent.type(canvas.getByTestId('email'), 'michael@chromatic.com');
     await userEvent.type(canvas.getByTestId('password'), 'k32904n£#1kjad');
     await userEvent.click(canvas.getByTestId('submit'));
+    await expect(canvas.getByText('ログイン成功')).toBeInTheDocument();
   },
 };
